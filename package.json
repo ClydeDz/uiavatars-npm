@@ -1,0 +1,24 @@
+{
+  "name": "ui-avatars",
+  "version": "0.0.1",
+  "description": "placeholder",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha tests/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ClydeDz/uiavatars-npm.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ClydeDz/uiavatars-npm/issues"
+  },
+  "homepage": "https://github.com/ClydeDz/uiavatars-npm#readme",
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "mocha-junit-reporter": "^1.22.0",
+    "nyc": "^14.1.1"
+  }
+}

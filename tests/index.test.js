@@ -6,8 +6,8 @@ describe('JSON snippets test', function () {
 
     it('check if JSON snippet file is named after the language identifier', function () {
         console.log("  ", "[test]", this.test.title);
-        var a = uiavatars.getPlural(true);
-        assert.equal(a, "s", "a");
+        var a = uiavatars.generateAvatar();
+        assert.equal(a, "https://ui-avatars.com/api/?", "a");
     });
 
 });

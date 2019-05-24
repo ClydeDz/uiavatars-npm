@@ -1,34 +1,37 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const baseURL = "https://ui-avatars.com/api/?";
-function generateAvatar(name, background, color, size, fontsize, length, rounded, bold, uppercase) {
+function generateAvatar(config) {
     let apiURL = baseURL;
-    if (name != null && name != "") {
-        apiURL += `&name=${name}`;
+    if (!config) {
+        return apiURL;
     }
-    if (background != null && background != "") {
-        apiURL += `&background=${background}`;
+    if (config.name && config.name != "") {
+        apiURL += `&name=${config.name}`;
     }
-    if (color != null && color != "") {
-        apiURL += `&color=${color}`;
+    if (config.background) {
+        apiURL += `&background=${config.background}`;
     }
-    if (size != undefined) {
-        apiURL += `&size=${size}`;
+    if (config.color && config.color != "") {
+        apiURL += `&color=${config.color}`;
     }
-    if (fontsize != undefined) {
-        apiURL += `&fontsize=${fontsize}`;
+    if (config.size) {
+        apiURL += `&size=${config.size}`;
     }
-    if (length != undefined) {
-        apiURL += `&length=${length}`;
+    if (config.fontsize) {
+        apiURL += `&fontsize=${config.fontsize}`;
     }
-    if (rounded) {
-        apiURL += `&rounded=${rounded}`;
+    if (config.length) {
+        apiURL += `&length=${config.length}`;
     }
-    if (bold) {
-        apiURL += `&bold=${bold}`;
+    if (config.rounded) {
+        apiURL += `&rounded=${config.rounded}`;
     }
-    if (uppercase) {
-        apiURL += `&uppercase=${uppercase}`;
+    if (config.bold) {
+        apiURL += `&bold=${config.bold}`;
+    }
+    if (config.uppercase) {
+        apiURL += `&uppercase=${config.uppercase}`;
     }
     return apiURL;
 }

@@ -1,44 +1,58 @@
 const baseURL = "https://ui-avatars.com/api/?";
 
-export function generateAvatar(name?: string, background?: string,
-    color?: string, size?: number, fontsize?: number, length?: number,
-    rounded?: boolean, bold?: boolean, uppercase?: boolean): string {
+interface UIAvatarConfig {
+    name?: string, 
+    background?: string,
+    color?: string, 
+    size?: number, 
+    fontsize?: number, 
+    length?: number,
+    rounded?: boolean, 
+    bold?: boolean, 
+    uppercase?: boolean
+}
+
+export function generateAvatar(config: UIAvatarConfig): string {
     let apiURL = baseURL;
 
-    if (name != null && name != "") {
-        apiURL += `&name=${name}`;
+    if(!config){
+        return apiURL;
+    }    
+
+    if (config.name && config.name != "") {
+        apiURL += `&name=${config.name}`;
     }
 
-    if (background != null && background != "") {
-        apiURL += `&background=${background}`;
+    if (config.background) {
+        apiURL += `&background=${config.background}`;
+    }
+    
+    if (config.color && config.color != "") {
+        apiURL += `&color=${config.color}`;
     }
 
-    if (color != null && color != "") {
-        apiURL += `&color=${color}`;
+    if (config.size) {
+        apiURL += `&size=${config.size}`;
     }
 
-    if (size != undefined) {
-        apiURL += `&size=${size}`;
+    if (config.fontsize) {
+        apiURL += `&fontsize=${config.fontsize}`;
     }
 
-    if (fontsize != undefined) {
-        apiURL += `&fontsize=${fontsize}`;
+    if (config.length) {
+        apiURL += `&length=${config.length}`;
     }
 
-    if (length != undefined) {
-        apiURL += `&length=${length}`;
+    if (config.rounded) {
+        apiURL += `&rounded=${config.rounded}`;
     }
 
-    if (rounded) {
-        apiURL += `&rounded=${rounded}`;
+    if (config.bold) {
+        apiURL += `&bold=${config.bold}`;
     }
 
-    if (bold) {
-        apiURL += `&bold=${bold}`;
-    }
-
-    if (uppercase) {
-        apiURL += `&uppercase=${uppercase}`;
+    if (config.uppercase) {
+        apiURL += `&uppercase=${config.uppercase}`;
     }
 
     return apiURL;

@@ -105,5 +105,6 @@ export function generateAvatar(settings: UIAvatarSettings): string {
         apiURL = apiURL.substring(0, apiURL.length-1);
     }    
 
-    return apiURL;
+    return apiURL;    
 }
+   

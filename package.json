@@ -10,6 +10,11 @@
     "devtest": "nyc mocha tests/*.test.js",
     "mocha": "mocha tests/*.test.js"
   },
+  "files": [
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ClydeDz/uiavatars-npm.git"

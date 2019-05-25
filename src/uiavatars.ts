@@ -64,41 +64,46 @@ export function generateAvatar(settings: UIAvatarSettings): string {
         return apiURL;
     }    
 
-    if (settings.name && settings.name != "") {
-        apiURL += `&name=${settings.name}`;
+    if (settings.name) {
+        apiURL += `name=${settings.name}&`;
     }
 
     if (settings.background) {
-        apiURL += `&background=${settings.background}`;
+        apiURL += `background=${settings.background}&`;
     }
     
-    if (settings.color && settings.color != "") {
-        apiURL += `&color=${settings.color}`;
+    if (settings.color) {
+        apiURL += `color=${settings.color}&`;
     }
 
     if (settings.size) {
-        apiURL += `&size=${settings.size}`;
+        apiURL += `size=${settings.size}&`;
     }
 
     if (settings.fontsize) {
-        apiURL += `&font-size=${settings.fontsize}`;
+        apiURL += `font-size=${settings.fontsize}&`;
     }
 
     if (settings.length) {
-        apiURL += `&length=${settings.length}`;
+        apiURL += `length=${settings.length}&`;
     }
 
     if (settings.rounded) {
-        apiURL += `&rounded=${settings.rounded}`;
+        apiURL += `rounded=${settings.rounded}&`;
     }
 
     if (settings.bold) {
-        apiURL += `&bold=${settings.bold}`;
+        apiURL += `bold=${settings.bold}&`;
     }
 
     if (settings.uppercase) {
-        apiURL += `&uppercase=${settings.uppercase}`;
+        apiURL += `uppercase=${settings.uppercase}&`;
     }
+
+    // Remove the & character from the end of the URL if it exists
+    if(apiURL.substr(apiURL.length-1) === '&'){
+        apiURL = apiURL.substring(0, apiURL.length-1);
+    }    
 
     return apiURL;
 }

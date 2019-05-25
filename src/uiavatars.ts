@@ -66,20 +66,42 @@ export function generateAvatar(settings: UIAvatarSettings): string {
         return apiURL;
     }
 
-    apiURL = settings.name ? `${apiURL}name=${settings.name}&` : apiURL;
-    apiURL = settings.background ? `${apiURL}background=${settings.background}&` : apiURL;
-    apiURL = settings.color ? `${apiURL}color=${settings.color}&` : apiURL;
-    apiURL = settings.size ? `${apiURL}size=${settings.size}&` : apiURL;
-    apiURL = settings.fontsize ? `${apiURL}font-size=${settings.fontsize}&` : apiURL;
-    apiURL = settings.length ? `${apiURL}length=${settings.length}&` : apiURL;
-    apiURL = settings.rounded ? `${apiURL}rounded=${settings.rounded}&` : apiURL;
-    apiURL = settings.bold ? `${apiURL}bold=${settings.bold}&` : apiURL;
-    apiURL = settings.uppercase ? `${apiURL}uppercase=${settings.uppercase}&` : apiURL;
+    apiURL += resolveSettings("name", settings.name);
+    apiURL += resolveSettings("background", settings.background);
+    apiURL += resolveSettings("color", settings.color);
+    apiURL += resolveSettings("size", settings.size);
+    apiURL += resolveSettings("font-size", settings.fontsize);
+    apiURL += resolveSettings("length", settings.length);
+    apiURL += resolveSettings("rounded", settings.rounded);
+    apiURL += resolveSettings("bold", settings.bold);
+    apiURL += resolveSettings("uppercase", settings.uppercase);
 
-    // Remove the & character from the end of the URL if it exists
-    const doesURLEndWithAmpersand = apiURL.substr(apiURL.length - 1) === "&";
-    const apiURLTrimmedLastChar = apiURL.substring(stringStartIndex, apiURL.length - stringTrimIndexFromEnd);
-    apiURL = doesURLEndWithAmpersand ? apiURLTrimmedLastChar : apiURL;
+    apiURL = trimAmpersandIfExists(apiURL);
 
     return apiURL;
+}
+
+/**
+ * Checks if supplied setting exists and valid and constructs the query string part
+ * of the API URL accordingly.
+ * @param key The key part of the query string.
+ * @param setting The setting that needs to be supplied as the value for that key.
+ */
+function resolveSettings(key:string, setting: any) : string{
+    if(!setting){
+        return "";
+    }
+    return  `${key}=${setting}&`;
+}
+
+/**
+ * Remove the & character from the end of the URL if it exists.
+ * @param apiURL The API URL being constructed
+ */
+function trimAmpersandIfExists(apiURL: string){
+    const doesURLEndWithAmpersand = apiURL.substr(apiURL.length - 1) === "&";
+    if(!doesURLEndWithAmpersand){
+        return apiURL;
+    }
+    return apiURL.substring(stringStartIndex, apiURL.length - stringTrimIndexFromEnd);
 }

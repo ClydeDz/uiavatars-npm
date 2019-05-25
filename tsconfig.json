@@ -4,11 +4,11 @@
       "module": "commonjs",
       "strict": true, 
       "declaration": true,
-      "outDir": "./dist"
+      "outDir": "lib"
     },
     "exclude": [
         "tests",
-        "dist",
+        "lib",
         "node_modules"
     ]
   }

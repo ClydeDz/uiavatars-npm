@@ -2,7 +2,8 @@
   "name": "ui-avatars",
   "version": "0.0.1",
   "description": "placeholder",
-  "main": "./src/index.js",
+  "main": "./lib/uiavatars.js",
+  "types": "./lib/uiavatars.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "mocha tests/*.test.js"

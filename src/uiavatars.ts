@@ -101,7 +101,7 @@ export function generateAvatar(settings: UIAvatarSettings): string {
     }
 
     // Remove the & character from the end of the URL if it exists
-    if(apiURL.substr(apiURL.length-1) === '&'){
+    if(apiURL.substr(apiURL.length-1) === "&"){
         apiURL = apiURL.substring(0, apiURL.length-1);
     }    
 

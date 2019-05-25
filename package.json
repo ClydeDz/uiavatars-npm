@@ -6,7 +6,8 @@
   "types": "./lib/uiavatars.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "mocha tests/*.test.js"
+    "test": "nyc --reporter=cobertura mocha tests/*.test.js --reporter mocha-junit-reporter --timeout 10000 --exit",
+    "mocha": "mocha tests/*.test.js"
   },
   "repository": {
     "type": "git",

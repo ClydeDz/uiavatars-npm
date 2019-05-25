@@ -77,8 +77,9 @@ export function generateAvatar(settings: UIAvatarSettings): string {
     apiURL = settings.uppercase ? `${apiURL}uppercase=${settings.uppercase}&` : apiURL;
 
     // Remove the & character from the end of the URL if it exists
-    var doesURLEndWithAmpersand = apiURL.substr(apiURL.length - 1) === "&";
-    apiURL = doesURLEndWithAmpersand ? apiURL.substring(stringStartIndex, apiURL.length - stringTrimIndexFromEnd) : apiURL;
+    const doesURLEndWithAmpersand = apiURL.substr(apiURL.length - 1) === "&";
+    const apiURLTrimmedLastChar = apiURL.substring(stringStartIndex, apiURL.length - stringTrimIndexFromEnd);
+    apiURL = doesURLEndWithAmpersand ? apiURLTrimmedLastChar : apiURL;
 
     return apiURL;
 }

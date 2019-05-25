@@ -1,4 +1,6 @@
 const baseURL = "https://ui-avatars.com/api/?";
+const stringStartIndex = 0;
+const stringTrimIndexFromEnd = 1;
 
 /**
  * Settings that you can supply to generate a custom UI Avatar.
@@ -9,7 +11,7 @@ interface UIAvatarSettings {
      * You can specify the initials yourself as well. 
      * Default: John Doe
      */
-    name?: string, 
+    name?: string,
     /**
      * Hex color for the image background, without the hash (#). 
      * Default: f0e9e9
@@ -19,7 +21,7 @@ interface UIAvatarSettings {
      * Hex color for the font, without the hash (#). 
      * Default: 8b5d5d
      */
-    color?: string, 
+    color?: string,
     /**
      * Avatar image size in pixels. Between: 16 and 512. 
      * Default: 64
@@ -28,8 +30,8 @@ interface UIAvatarSettings {
     /**
      * Font size in percentage of size. Between 0.1 and 1. 
      * Default: 0.5
-     */ 
-    fontsize?: number, 
+     */
+    fontsize?: number,
     /**
      * Length of the generated initials. 
      * Default: 2
@@ -39,12 +41,12 @@ interface UIAvatarSettings {
      * Boolean specifying if the returned image should be a circle. 
      * Default: false
      */
-    rounded?: boolean, 
+    rounded?: boolean,
     /**
      * Boolean specifying if the returned letters should use a bold font. 
      * Default: false
      */
-    bold?: boolean, 
+    bold?: boolean,
     /**
      * Decide if the API should uppercase the name/initials. 
      * Default: true
@@ -60,51 +62,23 @@ interface UIAvatarSettings {
 export function generateAvatar(settings: UIAvatarSettings): string {
     let apiURL = baseURL;
 
-    if(!settings){
+    if (!settings) {
         return apiURL;
-    }    
-
-    if (settings.name) {
-        apiURL += `name=${settings.name}&`;
     }
 
-    if (settings.background) {
-        apiURL += `background=${settings.background}&`;
-    }
-    
-    if (settings.color) {
-        apiURL += `color=${settings.color}&`;
-    }
-
-    if (settings.size) {
-        apiURL += `size=${settings.size}&`;
-    }
-
-    if (settings.fontsize) {
-        apiURL += `font-size=${settings.fontsize}&`;
-    }
-
-    if (settings.length) {
-        apiURL += `length=${settings.length}&`;
-    }
-
-    if (settings.rounded) {
-        apiURL += `rounded=${settings.rounded}&`;
-    }
-
-    if (settings.bold) {
-        apiURL += `bold=${settings.bold}&`;
-    }
-
-    if (settings.uppercase) {
-        apiURL += `uppercase=${settings.uppercase}&`;
-    }
+    apiURL = settings.name ? `${apiURL}name=${settings.name}&` : apiURL;
+    apiURL = settings.background ? `${apiURL}background=${settings.background}&` : apiURL;
+    apiURL = settings.color ? `${apiURL}color=${settings.color}&` : apiURL;
+    apiURL = settings.size ? `${apiURL}size=${settings.size}&` : apiURL;
+    apiURL = settings.fontsize ? `${apiURL}font-size=${settings.fontsize}&` : apiURL;
+    apiURL = settings.length ? `${apiURL}length=${settings.length}&` : apiURL;
+    apiURL = settings.rounded ? `${apiURL}rounded=${settings.rounded}&` : apiURL;
+    apiURL = settings.bold ? `${apiURL}bold=${settings.bold}&` : apiURL;
+    apiURL = settings.uppercase ? `${apiURL}uppercase=${settings.uppercase}&` : apiURL;
 
     // Remove the & character from the end of the URL if it exists
-    if(apiURL.substr(apiURL.length-1) === "&"){
-        apiURL = apiURL.substring(0, apiURL.length-1);
-    }    
+    var doesURLEndWithAmpersand = apiURL.substr(apiURL.length - 1) === "&";
+    apiURL = doesURLEndWithAmpersand ? apiURL.substring(stringStartIndex, apiURL.length - stringTrimIndexFromEnd) : apiURL;
 
-    return apiURL;    
+    return apiURL;
 }
-   

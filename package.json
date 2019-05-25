@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc",
     "test": "nyc --reporter=cobertura mocha tests/*.test.js --reporter mocha-junit-reporter --timeout 10000 --exit",
+    "devtest": "nyc mocha tests/*.test.js",
     "mocha": "mocha tests/*.test.js"
   },
   "repository": {

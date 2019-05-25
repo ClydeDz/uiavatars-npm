@@ -1,7 +1,7 @@
 {
   "name": "ui-avatars",
   "version": "0.0.1",
-  "description": "placeholder",
+  "description": "Generate avatar images based on user initials",
   "main": "./lib/uiavatars.js",
   "types": "./lib/uiavatars.d.ts",
   "scripts": {
@@ -14,7 +14,9 @@
     "type": "git",
     "url": "git+https://github.com/ClydeDz/uiavatars-npm.git"
   },
-  "author": "",
+  "author": {
+    "name": "Clyde D'Souza"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ClydeDz/uiavatars-npm/issues"
@@ -24,5 +26,25 @@
     "mocha": "^6.1.4",
     "mocha-junit-reporter": "^1.22.0",
     "nyc": "^14.1.1"
-  }
+  },
+  "keywords": [
+    "ui-avatars",
+    "uiavatars",
+    "avatars",
+    "gravatars",
+    "generate",
+    "user initials",
+    "avataars",
+    "user image",
+    "gender neutral",
+    "profile picture",
+    "picture",
+    "user",
+    "profile",
+    "bio",
+    "img",
+    "image",
+    "javascript",
+    "html"
+  ]
 }

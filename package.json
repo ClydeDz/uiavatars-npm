@@ -1,6 +1,6 @@
 {
   "name": "ui-avatars",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Generate avatar images based on user initials",
   "main": "./lib/uiavatars.js",
   "types": "./lib/uiavatars.d.ts",

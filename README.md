@@ -5,7 +5,8 @@ Generate avatar images based on user initials.
 ![Azure DevOps tests (branch)](https://img.shields.io/azure-devops/tests/clydedsouza/UI%20Avatars%20npm/26/master.svg) 
 ![Azure DevOps coverage](https://img.shields.io/azure-devops/coverage/clydedsouza/UI%20Avatars%20npm/26.svg) 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6411dc46f633403d884210c8ec4839c5)](https://app.codacy.com/app/ClydeDz/uiavatars-npm?utm_source=github.com&utm_medium=referral&utm_content=ClydeDz/uiavatars-npm&utm_campaign=Badge_Grade_Dashboard) 
-![MIT License](https://img.shields.io/static/v1.svg?label=📜%20License&message=MIT&color=informational)   
+![MIT License](https://img.shields.io/static/v1.svg?label=📜%20License&message=MIT&color=informational) 
+[![npm](https://img.shields.io/npm/v/ui-avatars.svg?color=brightgreen&logo=npm)](http://bit.ly/ui-avatars)   
 
 ## Usage  
 After installing, simply import it in your file. 

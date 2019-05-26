@@ -11,7 +11,7 @@ Generate avatar images based on user initials.
 After installing, simply import it in your file. 
 
 ```javascript
-const uiavatars = require("uiavatars");
+const uiavatars = require("ui-avatars");
 ```
 
 Consume the `generateAvatar()` API to get an avatar URL that you can use directly as an image. All settings are pretty self-explanatory.

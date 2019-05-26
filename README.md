@@ -14,7 +14,7 @@ After installing, simply import it in your file.
 const uiavatars = require("ui-avatars");
 ```
 
-Consume the `generateAvatar()` API to get an avatar URL that you can use directly as an image. All settings are pretty self-explanatory.
+Consume the `generateAvatar()` API to get an avatar URL that you can use directly as an image. Supply the settings object to this method to generate the avatar image URL accordingly. You can either supply one or all settings, based on your requirement. All settings are pretty self-explanatory.  
 
 ```javascript
 var avatarURL = uiavatars.generateAvatar({
@@ -31,9 +31,14 @@ var avatarURL = uiavatars.generateAvatar({
 ```
    
 ## Examples 
-![Sample image 1](https://ui-avatars.com/api/?background=990000&color=fff&name=Clyde%20D%27Souza&size=120) 
-![Sample image 2](https://ui-avatars.com/api/?bold=true&size=120) 
-![Sample image 3](https://ui-avatars.com/api/?name=Tony%20Stark&length=1&size=120&font-size=0.8&background=23ff6c&color=000000) 
+> Clicking on the images below opens the image in a browser window.  
+
+[![Sample image 1](https://ui-avatars.com/api/?background=990000&color=fff&name=Clyde%20D%27Souza&size=120)](https://ui-avatars.com/api/?background=990000&color=fff&name=Clyde%20D%27Souza&size=120) 
+[![Sample image 2](https://ui-avatars.com/api/?bold=true&size=120)](https://ui-avatars.com/api/?bold=true&size=120) 
+[![Sample image 3](https://ui-avatars.com/api/?name=Tony%20Stark&length=1&size=120&font-size=0.8&background=23ff6c&color=000000)](https://ui-avatars.com/api/?name=Tony%20Stark&length=1&size=120&font-size=0.8&background=23ff6c&color=000000)    
+
+## Release notes 
+Release notes can be found [here](https://github.com/ClydeDz/uiavatars-npm/releases).   
 
 ## License
 This npm package is licensed under MIT. [UI Avatars](https://ui-avatars.com/) may be licensed separately.  
